@@ -1,0 +1,39 @@
+import random
+
+# Define the choices
+choices = ["rock", "paper", "scissors"]
+
+# Number of rounds
+rounds = int(input("How many rounds would you like to play (2 or 3)? "))
+if rounds not in [2, 3]:
+    print("Invalid input! Defaulting to 2 rounds.")
+    rounds = 2
+
+# Start the game
+for round_num in range(1, rounds + 1):
+    print(f"\nRound {round_num}:")
+    
+    # Get the user's choice
+    user_choice = input("Your move (rock, paper, scissors): ").lower()
+    if user_choice not in choices:
+        print("Invalid choice! You lose this round.")
+        continue
+
+    # Generate the computer's choice
+    computer_choice = random.choice(choices)
+
+    # Display the choices
+    print(f"Your move: {user_choice}")
+    print(f"Computer's move: {computer_choice}")
+
+    # Determine the outcome
+    if user_choice == computer_choice:
+        print("It's a draw!")  # Optional, can be removed
+    elif (user_choice == "rock" and computer_choice == "scissors") or \
+         (user_choice == "paper" and computer_choice == "rock") or \
+         (user_choice == "scissors" and computer_choice == "paper"):
+        print("You win!")
+    else:
+        print("You lose!")
+
+print("\nGame Over. Thanks for playing!")
