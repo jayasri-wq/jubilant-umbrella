@@ -1,0 +1,174 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+/* Navbar Styling */
+nav {
+    background: #007bff;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Page Container */
+.container {
+    max-width: 900px;
+    margin: auto;
+    padding: 20px;
+}
+
+h1, h2 {
+    color: #333;
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.product {
+    border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 5px;
+    width: 250px;
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #fff;
+}
+
+.product img {
+    width: 100%;
+    border-radius: 5px;
+}
+
+.product h3 {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+.product p {
+    font-size: 16px;
+    color: #333;
+}
+
+.product button {
+    margin-top: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.product button:hover {
+    background-color: #218838;
+}
+
+/* Cart Styling */
+#cart-items {
+    margin: 20px 0;
+    padding: 10px;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+.cart-item {
+    margin: 10px 0;
+    font-size: 18px;
+}
+
+#cart-total {
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Login Form */
+.login-container {
+    max-width: 350px;
+    margin: auto;
+    padding: 20px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+input, button {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    padding: 10px;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Hide Page Styling */
+.hide {
+    display: none;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .product-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        width: 80%;
+        margin-bottom: 20px;
+    }
+
+    nav a {
+        display: block;
+        margin: 10px 0;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .product {
+        width: 90%;
+    }
+
+    .login-container {
+        width: 90%;
+    }
+
+    nav a {
+        font-size: 14px;
+    }
+}
