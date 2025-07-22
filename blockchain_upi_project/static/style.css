@@ -1,0 +1,148 @@
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: url('https://images.unsplash.com/photo-1611078489935-4b1a1f5403f6') no-repeat center center fixed;
+  background-size: cover;
+  color: #333;
+}
+
+.container {
+  max-width: 650px;
+  margin: 60px auto;
+  background: rgba(255, 255, 255, 0.92);
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+  font-weight: 600;
+  font-size: 26px;
+  text-align: center;
+  margin-bottom: 30px;
+  color: #202020;
+}
+
+label {
+  display: block;
+  margin-top: 15px;
+  font-weight: 500;
+}
+
+input, select {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+button {
+  margin-top: 25px;
+  width: 100%;
+  padding: 12px;
+  font-size: 18px;
+  background: #00b894;
+  border: none;
+  color: white;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background: #019875;
+}
+
+.flash-messages {
+  list-style: none;
+  padding: 0;
+  margin: 10px 0 25px 0;
+}
+
+.flash-messages li.success {
+  background: #d4edda;
+  padding: 10px;
+  border-left: 5px solid #28a745;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.flash-messages li.danger {
+  background: #f8d7da;
+  padding: 10px;
+  border-left: 5px solid #dc3545;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.view-chain {
+  display: block;
+  text-align: center;
+  margin-top: 30px;
+  text-decoration: none;
+  color: #0984e3;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.view-chain:hover {
+  color: #0652dd;
+}
+
+/* Blockchain Page Styling */
+.block-card {
+  background: #fdfdfd;
+  border-left: 5px solid #00cec9;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 12px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease;
+}
+
+.block-card:hover {
+  transform: scale(1.01);
+}
+
+.block-card h3 {
+  margin-top: 0;
+  color: #2d3436;
+}
+
+.transactions ul {
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.transactions li {
+  margin-bottom: 6px;
+  color: #2f3640;
+}
+/* Flash message styles */
+.flash {
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    text-align: center;
+}
+.flash.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+.flash.error {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+.flash.info {
+    background-color: #cce5ff;
+    color: #004085;
+}

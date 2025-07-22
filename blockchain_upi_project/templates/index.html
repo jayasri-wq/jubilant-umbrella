@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Secure UPI Dashboard</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(120deg, #fdfbfb, #ebedee);
+      padding: 30px;
+    }
+
+    .container {
+      max-width: 600px;
+      margin: auto;
+      background: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .info-box {
+      background: #f1f5f9;
+      border: 1px solid #d0d7de;
+      padding: 15px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      font-size: 16px;
+    }
+
+    label {
+      font-weight: 600;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin-top: 5px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+
+    button {
+      width: 100%;
+      background-color: #007bff;
+      color: white;
+      padding: 12px;
+      border: none;
+      margin-top: 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0056b3;
+    }
+
+    .links {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .links a {
+      margin: 0 10px;
+      text-decoration: none;
+      color: #007bff;
+      font-weight: bold;
+    }
+
+    .flash {
+      color: red;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>💰 Welcome, {{ current_user.username }}</h2>
+
+    {% with messages = get_flashed_messages() %}
+      {% if messages %}
+        <div class="flash">
+          {% for message in messages %}
+            {{ message }}
+          {% endfor %}
+        </div>
+      {% endif %}
+    {% endwith %}
+
+    <div class="info-box">
+      <p><strong>UPI ID:</strong> {{ current_user.upi }}</p>
+      <p><strong>Balance:</strong> ₹ {{ current_user.balance }}</p>
+    </div>
+
+    <form method="POST" action="/send">
+      <label for="receiver_upi">Send to:</label>
+      <select name="receiver_upi" required>
+        <option value="" disabled selected>Select recipient</option>
+        {% for user in all_users %}
+          {% if user.upi != current_user.upi %}
+            <option value="{{ user.upi }}">{{ user.username }} - {{ user.upi }}</option>
+          {% endif %}
+        {% endfor %}
+      </select>
+
+      <label for="amount">Amount (₹):</label>
+      <input type="number" name="amount" step="0.01" min="1" required>
+
+      <button type="submit">Send Money</button>
+    </form>
+
+    <div class="links">
+      <a href="/transactions">📜 View Transactions</a>
+      <a href="/blockchain">🔗 View Blockchain</a>
+      <a href="/logout">🚪 Logout</a>
+    </div>
+  </div>
+
+</body>
+</html>
