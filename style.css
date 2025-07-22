@@ -1,0 +1,104 @@
+/* === Global Styles === */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #fce4ec);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+/* === Centered Card === */
+.container {
+    max-width: 650px;
+    background: rgba(255, 255, 255, 0.95);
+    margin: 50px auto;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    text-align: center;
+}
+
+/* === Banner Image === */
+.banner {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 14px;
+    margin-bottom: 25px;
+}
+
+/* === Heading === */
+h1 {
+    color: #ad1457;
+    font-size: 26px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+/* === Upload Button === */
+.custom-upload {
+    display: inline-block;
+    padding: 14px 22px;
+    background: #c2185b;
+    color: #fff;
+    border-radius: 10px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin: 20px 0;
+}
+
+.custom-upload:hover {
+    background: #ad1457;
+}
+
+input[type="file"] {
+    display: none;
+}
+
+/* === Submit Button === */
+button {
+    background-color: #00897b;
+    border: none;
+    color: white;
+    padding: 12px 22px;
+    font-size: 17px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00695c;
+}
+
+/* === Result Box === */
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    border: 2px dashed #b71c1c;
+    background-color: #ffebee;
+    border-radius: 12px;
+    color: #b71c1c;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+/* === Icon Image === */
+.icon {
+    width: 60px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+/* === Blood Group Text === */
+.blood-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #b71c1c;
+}
